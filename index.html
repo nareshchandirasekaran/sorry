@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry 😔</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 90%;
+      animation: slideIn 1.2s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: #d81b60;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .heart {
+      color: red;
+      font-size: 2.5rem;
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    button {
+      background: #d81b60;
+      color: white;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #ad1457;
+      transform: scale(1.05);
+    }
+
+    .fadeout {
+      animation: fadeOut 1.2s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .heart {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="card">
+    <h1>I'm Really Sorry Bab 😔</h1>
+    <p>
+      I know I hurt you, and I feel terrible about it. <br />
+      Please forgive me, my love. I never meant to make you feel this way. <br />
+      <span class="heart">❤️</span>
+    </p>
+    <button onclick="forgiveMe()">Forgive Me</button>
+  </div>
+
+  <script>
+    function forgiveMe() {
+      const card = document.getElementById('card');
+      card.classList.add('fadeout');
+      setTimeout(() => {
+        card.innerHTML = `
+          <h1>Thank You Chella Bab ❤️</h1>
+          <p>Your forgiveness means the world to me. <br> I promise to never repeat my mistake again.</p>
+        `;
+        card.classList.remove('fadeout');
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
